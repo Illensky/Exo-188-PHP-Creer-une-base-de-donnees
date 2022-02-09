@@ -22,6 +22,7 @@
 
 // TODO Votre code ici bas.
 
+/*
 try {
     $maConnexion = ........
 
@@ -36,16 +37,15 @@ try {
 catch (PDOException $exception) {
     echo $exception->getMessage();
 }
+*/
 
+require __DIR__ . '/Classes/Config.php';
+require __DIR__ . '/Classes/DBSingleton.php';
 
+$con = DBSingleton::PDO();
 
+$con->exec("CREATE DATABASE intro_sql (id INT USIGNED AUTO_INCREMENT PRIMARY KEY)");
 
+$con->exec("DROP DATABASE intro_sql");
 
-
-
-
-
-
-
-
-
+$con->exec("CREATE DATABASE intro_sql");
